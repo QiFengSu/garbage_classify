@@ -5,7 +5,7 @@
 @File    ：resnet101.py
 @IDE     ：PyCharm 
 @Author  ：AC_sqf
-@Date    ：2022/5/28 17:07 
+@Date    ：2022/5/28 17:07
 '''
 import torch
 import torch.nn as nn
