@@ -96,8 +96,12 @@ print(next(iter(train_dataloader)))
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device)
 model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x16d_wsl')
-model.fc = nn.Linear(2048, 40)
+# model.fc = nn.Linear(2048, 40)
 
+model.fc = nn.Sequential(
+        nn.Dropout(0.2),
+        nn.Linear(2048, 40)
+    )
 
 # 定义学习率等
 # optimizer = optim.Adam(model.fc.parameters(), lr=0.005)  #,weight_decay=0.0001
